@@ -2,12 +2,12 @@
 
 Summary:	Application access to USB devices
 Name:		libusbx
-Version:	1.0.12
+Version:	1.0.14
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libusbx/%{name}-%{version}.tar.bz2
-# Source0-md5:	c41352ac755c7992edfcbb2ea4ad1349
+# Source0-md5:	0a6a75edb4b4eae7dc82c1dd71ddc470
 URL:		http://libusbx.org
 BuildRequires:	autoconf
 BuildRequires:	automake
