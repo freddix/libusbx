@@ -3,7 +3,7 @@
 Summary:	Application access to USB devices
 Name:		libusbx
 Version:	1.0.14
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libusbx/%{name}-%{version}.tar.bz2
@@ -42,6 +42,7 @@ incorporate libusb into applications.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-log		\
 	--disable-silent-rules	\
 	--disable-static
 %{__make}
