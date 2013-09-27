@@ -3,7 +3,7 @@
 Summary:	Application access to USB devices
 Name:		libusbx
 Version:	1.0.16
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libusbx/%{name}-%{version}.tar.bz2
