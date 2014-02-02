@@ -2,12 +2,12 @@
 
 Summary:	Application access to USB devices
 Name:		libusbx
-Version:	1.0.16
-Release:	2
+Version:	1.0.18
+Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libusbx/%{name}-%{version}.tar.bz2
-# Source0-md5:	7f5715d624cd6c26b30a317eb6c2fe5e
+# Source0-md5:	f2ccd0589dde901dfd5607459f77bf44
 URL:		http://libusbx.org
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README NEWS ChangeLog THANKS TODO
+%doc AUTHORS README NEWS ChangeLog TODO
 %attr(755,root,root) %ghost %{_libdir}/libusb-*.so.?
 %attr(755,root,root) %{_libdir}/libusb-*.so.*.*.*
 
