@@ -2,12 +2,12 @@
 
 Summary:	Application access to USB devices
 Name:		libusbx
-Version:	1.0.18
+Version:	1.0.19
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libusbx/%{name}-%{version}.tar.bz2
-# Source0-md5:	f2ccd0589dde901dfd5607459f77bf44
+Source0:	http://downloads.sourceforge.net/libusb/libusb-%{version}.tar.bz2
+# Source0-md5:	f9e2bb5879968467e5ca756cb4e1fa7e
 URL:		http://libusbx.org
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -18,6 +18,7 @@ BuildRequires:	doxygen
 BuildRequires:	openjade
 %endif
 BuildRequires:	libtool
+BuildRequires:	udev-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,7 +34,7 @@ This package contains header files and other resources you can use to
 incorporate libusb into applications.
 
 %prep
-%setup -q
+%setup -qn libusb-%{version}
 
 %build
 %{__libtoolize}
