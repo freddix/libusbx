@@ -1,9 +1,9 @@
 %bcond_with	doc
 
 Summary:	Application access to USB devices
-Name:		libusbx
+Name:		libusb
 Version:	1.0.19
-Release:	1
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libusb/libusb-%{version}.tar.bz2
@@ -19,6 +19,8 @@ BuildRequires:	openjade
 %endif
 BuildRequires:	libtool
 BuildRequires:	udev-devel
+Provides:	libusbx = %{version}-%{release}
+Obsoletes:	libusbx = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,13 +30,15 @@ Provides a library for application access to USB devices.
 Summary:	Header files for libusb library
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Provides:	libusbx-devel = %{version}-%{release}
+Obsoletes:	libusbx-devel = %{version}-%{release}
 
 %description devel
 This package contains header files and other resources you can use to
 incorporate libusb into applications.
 
 %prep
-%setup -qn libusb-%{version}
+%setup -q
 
 %build
 %{__libtoolize}
@@ -55,8 +59,10 @@ incorporate libusb into applications.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libusb-*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -74,7 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{?with_doc:%doc doc/html/*}
 %attr(755,root,root) %{_libdir}/libusb-*.so
-%{_libdir}/libusb-*.la
 %{_includedir}/libusb-*
 %{_pkgconfigdir}/libusb-*.pc
 
